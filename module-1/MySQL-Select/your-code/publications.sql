@@ -33,7 +33,12 @@ SELECT
 	A.au_id AS 'AUTHOR ID', 
     A.au_lname AS 'LAST NAME', 
     A.au_fname AS 'FIRST NAME',  
+    A.contract AS 'CONTRACT',
     T.title AS 'TITLE',
+    T.`type` AS 'TYPE',
+    T.price AS 'PRICE',
+    T.notes AS 'NOTES',
+    T.pubdate AS 'PUBLISH DATE',
     P.pub_name AS 'PUBLISER'
 FROM publications.authors AS A
 INNER JOIN publications.titleauthor AS TA
@@ -52,4 +57,4 @@ ON T.pub_id = P.pub_id;
 -- Elevating from your solution in Challenge 1, query how many titles each author has published at each publisher. 
 -- To check if your output is correct, sum up the TITLE COUNT column. The sum number should be the same as the total number of records in Table titleauthor.
 -- Hint: In order to count the number of titles published by an author, you need to use MySQL COUNT. Also check out MySQL Group By because you will count the rows of different groups of data. Refer to the references and learn by yourself. These features will be formally discussed in the Temp Tables and Subqueries lesson.
-
+SELECT 
