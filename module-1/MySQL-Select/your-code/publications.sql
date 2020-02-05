@@ -1,8 +1,8 @@
 USE publications;
 -- Challenge 1 - Who Have Published What At Where?
--- In this challenge you will write a MySQL SELECT query that joins various tables to figure out what titles each author has published at which publishers. Your output should have at least the following columns:
+-- In this challenge you will write a MySQL SELECT query that joins various tables to figure out what titles each author has published at which publishers. 
 -- CREATE TEMPORARY TABLE AB
-CREATE VIEW c1_1 AS
+CREATE VIEW c1_subquery AS
 SELECT
 	b.au_id AS 'Author ID',
 	b.au_lname AS 'Last Name',
@@ -47,3 +47,9 @@ ON T.pub_id = P.pub_id;
 -- 25
 -- SELECT COUNT(*) FROM publications.titleauthor;
 -- 25
+
+-- Challenge 2 - Who Have Published How Many At Where?
+-- Elevating from your solution in Challenge 1, query how many titles each author has published at each publisher. 
+-- To check if your output is correct, sum up the TITLE COUNT column. The sum number should be the same as the total number of records in Table titleauthor.
+-- Hint: In order to count the number of titles published by an author, you need to use MySQL COUNT. Also check out MySQL Group By because you will count the rows of different groups of data. Refer to the references and learn by yourself. These features will be formally discussed in the Temp Tables and Subqueries lesson.
+
