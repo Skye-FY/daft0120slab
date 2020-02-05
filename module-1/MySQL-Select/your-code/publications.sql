@@ -100,3 +100,39 @@ LIMIT 3;
 
 -- Challenge 4 - Best Selling Authors Ranking
 -- Now modify your solution in Challenge 3 so that the output will display all 23 authors instead of the top 3. Note that the authors who have sold 0 titles should also appear in your output (ideally display 0 instead of NULL as the TOTAL). Also order your results based on TOTAL from high to low. 
+CREATE TABLE C4A AS
+SELECT 
+	authors.au_id AS AUTHOR_ID, 
+    authors.au_lname AS LAST_NAME, 
+    authors.au_fname AS FIRST_NAME,  
+    SUM(sales.qty) AS TOTAL
+FROM publications.authors
+LEFT JOIN publications.titleauthor
+ON authors.au_id = titleauthor.au_id
+LEFT JOIN publications.sales
+ON titleauthor.title_id = sales.title_id
+GROUP BY 
+	authors.au_id,
+    authors.au_lname,
+    authors.au_lname
+ORDER BY 
+	TOTAL DESC,
+    AUTHOR_ID DESC,
+    LAST_NAME ASC,
+    FIRST_NAME ASC;
+CREATE VIEW C4 AS
+SELECT 
+	AUTHOR_ID, 
+    LAST_NAME, 
+    FIRST_NAME,  
+    IFNULL(TOTAL, 0) AS TOTAL
+FROM publications.C4A
+GROUP BY 
+	AUTHOR_ID,
+    LAST_NAME,
+    FIRST_NAME
+ORDER BY 
+	TOTAL DESC,
+    AUTHOR_ID DESC,
+    LAST_NAME ASC,
+    FIRST_NAME ASC;
