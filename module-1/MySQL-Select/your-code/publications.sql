@@ -72,3 +72,26 @@ GROUP BY
 ORDER BY     
     simplified.AUTHOR_ID DESC,
     TITLE_COUNT DESC;
+ 
+-- Challenge 3 - Best Selling Authors
+-- Who are the top 3 authors who have sold the highest number of titles? Write a query to find out.
+CREATE VIEW C3 AS
+SELECT 
+	simplified.AUTHOR_ID, 
+    simplified.LAST_NAME, 
+    simplified.FIRST_NAME,  
+    SUM(sales.qty) AS TITLE_COPY_SOLD
+FROM publications.simplified
+RIGHT JOIN publications.titleauthor
+ON simplified.AUTHOR_ID = titleauthor.au_id
+LEFT JOIN publications.sales
+ON titleauthor.title_id = sales.title_id
+GROUP BY 
+	simplified.AUTHOR_ID,
+    simplified.LAST_NAME,
+    simplified.FIRST_NAME
+ORDER BY TITLE_COPY_SOLD DESC;
+-- LIMIT 3;
+SELECT COUNT(*) FROM C3;
+-- Challenge 4 - Best Selling Authors Ranking
+-- Now modify your solution in Challenge 3 so that the output will display all 23 authors instead of the top 3. Note that the authors who have sold 0 titles should also appear in your output (ideally display 0 instead of NULL as the TOTAL). Also order your results based on TOTAL from high to low. 
