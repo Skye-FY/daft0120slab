@@ -48,22 +48,64 @@ GROUP BY trans.account_id, trans.`type`
 ORDER BY trans.`type` ASC;
 
 -- 7. From the previous output, translate the values for type to English, rename the column to transaction_type, round total_amount down to an integer
--- UPDATE bank.trans
--- SET trans.`type` = 'OUTGOING'
--- WHERE trans.account_id = 396;
+CREATE VIEW Q7 AS
 SELECT 
 	trans.account_id,
-    IF(type = 'PRIJEM', 'INCOMING', 'OUTGOING') AS transction_type,
+    IF(type = 'PRIJEM', 'INCOMING', 'OUTGOING') AS transaction_type,
     FLOOR(SUM(amount)) AS total_amount
 FROM bank.trans
 WHERE trans.account_id = 396
 GROUP BY trans.account_id, type
-ORDER BY 3
+ORDER BY total_amount;
 
--- 8. From the previous result, modify you query so that it returns only one row, with a column for incoming amount, outgoing amount and the difference
+-- 8. From the previous result, modify you query so that it returns only one row, 
+-- with a column for incoming amount, outgoing amount and the difference
+CREATE VIEW Q8 AS
+SELECT
+	i.account_id AS ACCOUNT_ID,
+    i.incoming_amount AS INCOMING_AMOUNT,
+    o.outgoing_amount AS OUTGOING_AMOUNT,
+    (i.incoming_amount - o.outgoing_amount) AS DIFFERENCE
+FROM (SELECT account_id,
+    total_amount AS incoming_amount
+	FROM bank.Q7
+    WHERE transaction_type = 'INCOMING') i
+INNER JOIN
+	(SELECT account_id,
+    total_amount AS outgoing_amount
+	FROM bank.Q7
+    WHERE transaction_type = 'OUTGOING') o
+    ON i.account_id = o.account_id;
 
 -- 9. Continuing with the previous example, rank the top 10 account_ids based on their difference
--- SELECT trans.account_id, trans.amt_difference
--- FROM bank.trans
--- ORDER BY trans.amt_difference DESC
--- LIMIT 10;
+
+
+SELECT
+	i.account_id AS ACCOUNT_ID,
+    (i.incoming_amount - o.outgoing_amount) AS DIFFERENCE
+FROM (SELECT 
+		f.account_id,
+		f.total_amount AS incoming_amount
+		FROM (SELECT 
+				trans.account_id,
+				IF(type = 'PRIJEM', 'INCOMING', 'OUTGOING') AS transaction_type,
+				FLOOR(SUM(amount)) AS total_amount
+                FROM bank.trans
+                GROUP BY trans.account_id, transaction_type
+				ORDER BY total_amount) f
+		WHERE transaction_type = 'INCOMING') i
+INNER JOIN
+	(SELECT 
+		f.account_id,
+		f.total_amount AS outgoing_amount
+		FROM (SELECT 
+				trans.account_id,
+				IF(type = 'PRIJEM', 'INCOMING', 'OUTGOING') AS transaction_type,
+				FLOOR(SUM(amount)) AS total_amount
+                FROM bank.trans
+                GROUP BY trans.account_id, transaction_type
+				ORDER BY total_amount) f
+		WHERE transaction_type = 'OUTGOING') o
+    ON i.account_id = o.account_id
+ORDER BY DIFFERENCE DESC
+LIMIT 10;
