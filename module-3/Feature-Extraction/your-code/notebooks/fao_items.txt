@@ -1,0 +1,180 @@
+0
+"Almonds, with shell"
+"Anise, badian, fennel, coriander"
+Apples
+Apricots
+Barley
+Berries nes
+Cotton lint
+Cottonseed
+"Eggs, hen, in shell"
+Figs
+"Fruit, citrus nes"
+"Fruit, fresh nes"
+"Fruit, stone nes"
+Grapes
+"Honey, natural"
+Linseed
+Maize
+"Melons, other (inc.cantaloupes)"
+Millet
+"Nuts, nes"
+"Oilcrops, Oil Equivalent"
+Olives
+"Onions, dry"
+Oranges
+Peaches and nectarines
+Pears
+Pistachios
+Plums and sloes
+Potatoes
+"Pulses, nes"
+"Rice, paddy"
+"Roots and Tubers,Total"
+Seed cotton
+Sesame seed
+"Silk-worm cocoons, reelable"
+"Spices, nes"
+Sugar beet
+Sugar cane
+"Sugar, raw"
+Sunflower seed
+Vegetables and Fruit Primary
+"Vegetables, fresh nes"
+"Walnuts, with shell"
+Watermelons
+Wheat
+"Wool, greasy"
+Agriculture (PIN)
+"Cereals,Total"
+Crops (PIN)
+Food (PIN)
+Livestock (PIN)
+Non Food (PIN)
+"Beans, dry"
+"Beans, green"
+"Broad beans, horse beans, dry"
+Cabbages and other brassicas
+Carrots and turnips
+Cauliflowers and broccoli
+Cherries
+"Cherries, sour"
+Chestnut
+"Chillies and peppers, green"
+Cucumbers and gherkins
+Dates
+Eggplants (aubergines)
+"Eggs, other bird, in shell"
+Garlic
+Hops
+"Leeks, other alliaceous vegetables"
+Lemons and limes
+Lettuce and chicory
+Mushrooms and truffles
+Oats
+Okra
+"Onions, shallots, green"
+"Peas, green"
+"Pumpkins, squash and gourds"
+Quinces
+Rye
+Sorghum
+Soybeans
+Spinach
+"Tangerines, mandarins, clementines, satsumas"
+"Tobacco, unmanufactured"
+Tomatoes
+"Vegetables, leguminous nes"
+Vetches
+Artichokes
+Bananas
+Carobs
+Chick peas
+"Chillies and peppers, dry"
+"Fruit, tropical fresh nes"
+Grapefruit (inc. pomelos)
+"Groundnuts, with shell"
+Lentils
+"Peas, dry"
+Rapeseed
+Strawberries
+Triticale
+Cassava
+"Cocoa, beans"
+Coconuts
+"Maize, green"
+Pineapples
+Taro (cocoyam)
+Yams
+"Bastfibres, other"
+Beeswax
+"Cashew nuts, with shell"
+Castor oil seed
+"Coffee, green"
+"Oil, palm"
+Palm kernels
+Sisal
+Sweet potatoes
+"Mangoes, mangosteens, guavas"
+Asparagus
+Avocados
+Canary seed
+"Cereals, nes"
+Fibre crops nes
+Flax fibre and tow
+Lupins
+Maté
+Oilseeds nes
+Papayas
+Safflower seed
+String beans
+Tea
+Tung nuts
+"Hazelnuts, with shell"
+Blueberries
+"Cow peas, dry"
+Currants
+Kiwi fruit
+Mustard seed
+Persimmons
+Raspberries
+Buckwheat
+Gooseberries
+"Grain, mixed"
+Hemp tow waste
+Poppy seed
+Cranberries
+Pigeon peas
+Plantains and others
+Areca nuts
+Ginger
+Jute
+"Rubber, natural"
+"Sugar crops, nes"
+Chicory roots
+"Roots and tubers, nes"
+Yautia (cocoyam)
+Fonio
+Karite nuts (sheanuts)
+Kola nuts
+Pepper (piper spp.)
+"Nutmeg, mace and cardamoms"
+"Brazil nuts, with shell"
+"Pyrethrum, dried"
+Quinoa
+Cashewapple
+"Gums, natural"
+Oil palm fruit
+Ramie
+Melonseed
+Peppermint
+Bambara beans
+Cinnamon (canella)
+Cloves
+Hempseed
+Vanilla
+Agave fibres nes
+Manila fibre (abaca)
+Kapokseed in shell
+Kapok fruit
+"Fruit, pome nes"
